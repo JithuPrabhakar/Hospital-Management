@@ -1,3 +1,4 @@
+import uuid
 from django.db import models
 
 class Patient(models.Model):
@@ -14,16 +15,30 @@ class Patient(models.Model):
         ('O+', 'O+'), ('O-', 'O-'),
     ]
 
-    patient_id = models.CharField(max_length=20, unique=True)
+    
     name = models.CharField(max_length=100)
     date_of_birth = models.DateField()
     gender = models.CharField(max_length=10, choices=GENDER_CHOICES)
     phone_number = models.CharField(max_length=10)
+    email = models.EmailField(default="default@gmail.com")
     blood_group = models.CharField(max_length=5, choices=BLOOD_GROUP_CHOICES)
     address = models.TextField()
     admitted_date = models.DateField(null=True, blank=True)
     discharge_date = models.DateField(null=True, blank=True)
-    allergies = models.TextField(blank=True)  # optional
+    allergies = models.TextField(blank=True) 
 
-    def _str_(self):
-        return f"{self.name} ({self.patient_id})"
+    token = models.CharField(max_length=20, blank=True, null=True, editable=False)
+
+
+    def save(self, *args, **kwargs):
+        if not self.token:
+            # Generate a unique token in Python
+            while True:
+                token = f"TOKEN-{uuid.uuid4().hex[:8].upper()}"
+                if not Patient.objects.filter(token=token).exists():
+                    self.token = token
+                    break
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f"{self.name} ({self.token})"

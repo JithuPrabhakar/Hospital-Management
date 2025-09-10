@@ -16,7 +16,9 @@ def patient_list(request):
     elif request.method =='POST':
         serializer = PatientSerializer(data = request.data)
         if serializer.is_valid():
-            serializer.save()
+            patient = serializer.save()  # token is generated automatically
+            response_data = serializer.data
+            response_data['token'] = patient.token
             return Response(serializer.data,status=status.HTTP_201_CREATED)
         return Response(serializer.errors,status = status.HTTP_400_BAD_REQUEST)
 

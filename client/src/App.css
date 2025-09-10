@@ -88,6 +88,7 @@
   background-repeat: no-repeat;
   background-position: center;
   min-height: 100vh;
+ 
 }
 .homepage-title
 {
@@ -99,9 +100,19 @@
    
     -webkit-text-stroke: 1px rgb(255, 255, 255); /* Thickness and color of border */
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-  
 
-
+}
+.btn-homeappoint
+{
+    margin-left: 100px;
+    margin-top: 50px;
+    padding: 10px;
+    background-color: rgb(16, 187, 4);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    box-shadow:2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 .homepage-title span
 {
@@ -111,4 +122,78 @@
     color: rgb(3, 39, 138);
 }
 
+.btn-appoint
+{
+    padding: 10px;
+    background-color: rgb(16, 187, 4);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    box-shadow:2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+.btn-status
+{
+    padding: 10px;
+    background-color: rgb(239, 125, 3);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 15px;
+     box-shadow:2px 2px 5px rgba(0, 0, 0, 0.5);
 
+}
+/* Appointment page */
+.app-title
+{
+    text-align: center;
+    color: purple;
+}
+.pa-appoint
+{
+    text-align: center;
+    margin:auto;
+    width: 500px;
+    border: 1px black dashed;
+    padding: 10px;
+    margin-top: 10px;
+
+}
+.form-row {
+  display: flex;
+  align-items: center;      
+  margin-bottom: 12px;  
+  
+}
+.form-row label {
+  width: 150px;              
+  margin-right: 10px;
+  text-align: right;       
+  font-weight: bold;
+  color:brown;   
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+  flex: 1;                  
+  padding: 6px 10px;
+  font-size: 14px;
+  border-color:rgb(0, 0, 0);
+  border-radius: 6px;
+  border-style:double;
+}
+.form-row button
+{
+    padding: 8px;
+    background-color: rgb(130, 78, 54);
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 4px;
+    margin-left: 20px;
+    flex: 1;  
+    box-shadow:2px 2px 7px rgba(0, 0, 0, 0.4);
+   /* justify-content:space-between; */
+
+}

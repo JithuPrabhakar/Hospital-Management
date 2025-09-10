@@ -1,7 +1,25 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate()
+
+  function handleAppointment(e)
+  {
+    e.preventDefault();
+    navigate('/appointment')
+
+
+  }
+  function handleStatus(e)
+  {
+    e.preventDefault();
+    
+    navigate('/patient')
+
+
+  }
+
   return (
     <>
       <div className="header-bar">
@@ -12,7 +30,7 @@ const Header = () => {
         <div className="menu">
           <ul className="menu-list">
             <li>
-              <Link to="">Home</Link>
+              <Link to="/">Home</Link>
             </li>
             <li>
               <Link to="">About</Link>
@@ -24,10 +42,10 @@ const Header = () => {
               <Link to="">Contact</Link>
             </li>
             <li>
-              <Link to="">Login</Link>
+              <button className="btn-appoint" type="submit" onClick={handleAppointment}>Appointment</button>
             </li>
             <li>
-              <Link to="">SignUp</Link>
+              <button className="btn-status" type="submit" onClick={handleStatus}>Check Status</button>
             </li>
             {/* <li><Link to="/dashboard">Doctor Login</Link></li> */}
           </ul>
