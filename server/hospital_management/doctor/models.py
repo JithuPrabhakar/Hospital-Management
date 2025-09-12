@@ -32,5 +32,5 @@ class Doctor(models.Model):
     shift_start = models.TimeField(default=time(9, 0))
     shift_end = models.TimeField(default=time(17, 0))
 
-    def _str_(self):
+    def __str__(self):
         return f"{self.name} - {self.specialization}"

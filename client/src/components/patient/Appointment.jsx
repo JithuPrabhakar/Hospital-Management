@@ -41,9 +41,13 @@ const Appointment = () => {
     async function handleSubmit(e)
     {
         e.preventDefault();
+        const selectedDoc = doctors.find(
+      (doc) => doc.id === parseInt(selectedDoctor)
+    );
         const appdetails = {
             ...formData,
-            doctor:selectedDoctor,
+            doctor_name: selectedDoc? selectedDoc.name : "",
+            doctor_specialization: selectedDoc ? selectedDoc.specialization : "",
             admitted_date: formData.admitted_date || null,
             discharge_date: formData.discharge_date || null,
         }
