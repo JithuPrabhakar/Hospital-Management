@@ -26,6 +26,8 @@ class Patient(models.Model):
     admitted_date = models.DateField(null=True, blank=True)
     discharge_date = models.DateField(null=True, blank=True)
     allergies = models.TextField(blank=True) 
+    doctor_name = models.CharField(max_length=255,  default="Not specified")
+    doctor_specialization = models.CharField(max_length=255, default="Not specified")
 
     token = models.CharField(max_length=20, blank=True, null=True, editable=False)
 

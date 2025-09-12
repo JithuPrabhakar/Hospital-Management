@@ -15,7 +15,7 @@ const Header = () => {
   {
     e.preventDefault();
     
-    navigate('/patient')
+    navigate('/validate-token')
 
 
   }

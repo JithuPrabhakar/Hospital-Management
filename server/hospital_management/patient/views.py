@@ -37,5 +37,18 @@ def patient_updel(request,pk):
     elif request.method =='DELETE':
         patient.delete()
         return Response(status =status.HTTP_204_NO_CONTENT)
+    
+    # token
+
+@api_view(['GET'])
+def validate_token(request, token):
+    try:
+        patient = Patient.objects.get(token=token)
+        serializer = PatientSerializer(patient)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    except Patient.DoesNotExist:
+        return Response({"error": "Invalid token."}, status=status.HTTP_404_NOT_FOUND)
+    except Exception as e:
+        return Response({"error": f"Server error: {str(e)}"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         
 
