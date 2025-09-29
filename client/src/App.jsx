@@ -7,7 +7,8 @@ import StaffPage from "./pages/StaffPage";
 import Dashboard from "./components/doctor/Dashboard";
 import Appointment from "./components/patient/Appointment";
 import TokenPage from "./components/patient/TokenPage";
-
+import LoginPage from "./pages/LoginPage";
+import PrescriptionForm from "./components/doctor/PrescriptionForm";
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
         <Route path={"/appointment"} element={<Appointment />} />
         <Route path={"/validate-token"} element={<TokenPage />} />
         <Route path={"/login"} element={<LoginPage />} />
-       
+        <Route path={"/prescription"} element={<PrescriptionForm />} />
       </Routes>
     </Router>
   );
