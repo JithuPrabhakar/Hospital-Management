@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import Header from "../components/common/Header";
+import { useState, useEffect, useContext } from 'react';
+import axios from 'axios';
+import AuthContext from '../context/AuthContext';
+import Navbar from '../components/Navbar';
 import "./DoctorPage.css";
 
 const DoctorPage = () => {
