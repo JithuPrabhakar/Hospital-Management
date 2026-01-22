@@ -1,0 +1,11 @@
+.info-box {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 15px 20px;
+  background: #fef9e7;
+  border: 1px solid #f1c40f;
+  border-radius: 10px;
+  color: #7d6608;
+  font-size: 1rem;
+  box-shadow: 0px 3px 8px rgba(0,0,0,0.1);
+}

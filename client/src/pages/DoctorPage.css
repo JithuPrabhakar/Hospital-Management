@@ -1,0 +1,118 @@
+.header {
+  background-color: #004d40;   /* deep teal */
+  color: #ffffff;              /* white text */
+  font-size: 1.3rem;           /* bigger text */
+  font-weight: 700;            /* bold */
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;               /* stays above other elements */
+}
+
+
+.doctor-title {
+  text-align: center;
+  margin: 30px 0;
+  color: #e6eff8;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.specialization-group {
+  margin-bottom: 50px;
+}
+
+.spec-title {
+  color: #ffffff;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-align: left;
+  padding-left: 20px;
+  border-left: 5px solid #ffffff;
+}
+
+.spec-doctors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: flex-start;
+  padding-left: 20px;
+}
+
+.doctor-card {
+  width: 260px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.doctor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.qualification {
+  color: #34495e;
+  margin: 5px 0;
+}
+
+.availability {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin-bottom: 15px;
+}
+
+.doctor-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.btn {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.details-btn {
+  background-color: #2980b9;
+  color: white;
+}
+
+.appointment-btn {
+  background-color: #27ae60;
+  color: white;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.availability-btn {
+  border: none;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: not-allowed; /* non-clickable */
+  font-weight: 600;
+}
+
+.available {
+  background-color: green;
+  color: white;
+}
+
+.not-available {
+  background-color: grey;
+  color: white;
+}

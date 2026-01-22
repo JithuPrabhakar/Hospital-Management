@@ -1,7 +1,7 @@
-import { useState, useEffect, useContext } from 'react';
-import axios from 'axios';
-import AuthContext from '../context/AuthContext';
-import Navbar from '../components/Navbar';
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Header from "../components/common/Header";
+import "./DoctorPage.css";
 
 const DoctorPage = () => {
     const { user } = useContext(AuthContext);
@@ -11,7 +11,7 @@ const DoctorPage = () => {
     const [message, setMessage] = useState('');
 
     useEffect(() => {
-        fetchPatients();
+        if (user) fetchPatients();
     }, [user]);
 
     const fetchPatients = async () => {
