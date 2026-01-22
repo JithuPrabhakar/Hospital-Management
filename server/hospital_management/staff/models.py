@@ -1,7 +1,9 @@
 from django.db import models
 from datetime import time
+from django.contrib.auth.models import User
 
 class Staff(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
     ROLE_CHOICES = [
         ('Nurse', 'Nurse'),
         ('Technician', 'Technician'),
@@ -19,5 +21,5 @@ class Staff(models.Model):
     shift_start = models.TimeField(default=time(9, 0))
     shift_end = models.TimeField(default=time(17, 0))
 
-    def _str_(self):
+    def __str__(self):
         return f"{self.name} ({self.role})"

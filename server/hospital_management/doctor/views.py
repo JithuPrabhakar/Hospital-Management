@@ -36,3 +36,24 @@ def doctor_updel(request,pk):
     elif request.method =='DELETE':
         doctor.delete()
         return Response(status =status.HTTP_204_NO_CONTENT)
+
+from .models import Prescription
+from .serializers import PrescriptionSerializer
+
+@api_view(['POST'])
+def add_prescription(request):
+    if request.method == 'POST':
+        serializer = PrescriptionSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        
+@api_view(['GET'])
+def view_prescriptions(request, doctor_id):
+    try:
+        prescriptions = Prescription.objects.filter(doctor_id=doctor_id)
+        serializer = PrescriptionSerializer(prescriptions, many=True)
+        return Response(serializer.data)
+    except Exception as e:
+         return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)

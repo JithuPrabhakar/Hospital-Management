@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'patient',
     'staff',
     'rest_framework',
+    'rest_framework_simplejwt',
     "corsheaders",
 ]
 

@@ -26,6 +26,12 @@ class Patient(models.Model):
     admitted_date = models.DateField(null=True, blank=True)
     discharge_date = models.DateField(null=True, blank=True)
     allergies = models.TextField(blank=True) 
+    STATUS_CHOICES = [
+        ('Pending', 'Pending'),
+        ('Admitted', 'Admitted'),
+        ('Discharged', 'Discharged'),
+    ]
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='Pending') 
     doctor_name = models.CharField(max_length=255,  default="Not specified")
     doctor_specialization = models.CharField(max_length=255, default="Not specified")
 
